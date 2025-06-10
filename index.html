@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Contact Card – Beatrice Lai</title>
+    <title>Contact Card – Jessica M. Breitenstein</title>
     <style>
       body {
         background-color: white;
@@ -12,17 +12,53 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        min-height: 100vh;
         margin: 0;
+        padding: 1rem;
+        box-sizing: border-box;
+        flex-direction: column;
       }
 
       .card {
-        background-color: #f8f0e8;
+        background: linear-gradient(-45deg, #b6c5b3, #b6c5b3, #f8f0e8, #b6c5b3);
+        background-size: 400% 400%;
+        animation: cardGradientShift 6s ease infinite,
+          fadeSlideIn 0.8s ease-out forwards;
+
         border-radius: 16px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-        width: 340px;
+        padding: 2rem 1.5rem;
+        width: 100%;
+        max-width: 360px;
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        box-sizing: border-box;
+        gap: 0.5rem;
+
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      @keyframes cardGradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes fadeSlideIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .profile-img {
@@ -31,14 +67,14 @@
         border-radius: 50%;
         background-color: #d6ecec;
         display: inline-block;
-        background-position: center center; /* Ensure image stays centered */
+        background-image: url("Bio Link.png");
+        background-position: center 45%;
         background-size: cover;
-        margin-bottom: 1rem;
-        margin-top: 20px;
+        margin: 1.5rem auto;
       }
 
       .name {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         font-weight: bold;
         margin-bottom: 0.25rem;
         color: #333;
@@ -46,64 +82,159 @@
 
       .title {
         color: #666;
-        font-size: 0.95rem;
+        font-size: 1rem;
         margin-bottom: 1.5rem;
       }
 
       .info {
         text-align: left;
         margin: 0 auto 1.5rem;
-        font-size: 0.95rem;
+        font-size: 1rem;
+        max-width: 260px;
       }
 
       .info p {
-        margin: 0.5rem 0;
+        margin: 0.8rem 0;
         display: flex;
         align-items: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       .info p span {
         margin-left: 0.5rem;
         word-break: break-word;
+        flex: 1;
       }
 
       .save-button {
-        background-color: #b6c5b3;
-        color: white;
-        border: none;
+        background: rgba(255, 255, 255, 0.2); /* semi-transparent */
+        color: #2e2e2e;
+        border: 1px solid rgba(255, 255, 255, 0.3);
         padding: 10px 20px;
         border-radius: 32px;
         cursor: pointer;
-        font-size: 0.95rem;
-        transition: background-color 0.3s ease;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 260px;
+
+        /* Glassmorphism */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+        /* Animation */
+        animation: subtleBounce 2.5s infinite ease-in-out;
+        transition: all 0.3s ease;
+      }
+
+      .save-button:hover {
+        background-color: rgba(255, 255, 255, 0.35);
+        transform: scale(1.03);
+      }
+
+      @keyframes subtleBounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .save-button:hover {
+        background-color: #4b1e1e;
+        transform: scale(1.03);
+      }
+
+      @keyframes subtleBounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
       }
 
       .save-button:hover {
         background-color: #4b1e1e;
       }
 
-      .icon {
-        width: 20px;
+      @media (max-width: 480px) {
+        .card {
+          padding: 1.5rem 1rem;
+        }
+
+        @media (max-height: 600px) {
+          body {
+            align-items: flex-start;
+            padding-top: 2rem;
+          }
+        }
+
+        .profile-img {
+          width: 80px;
+          height: 80px;
+        }
+
+        .name {
+          font-size: 1.3rem;
+        }
+
+        .title,
+        .info,
+        .save-button {
+          font-size: 0.95rem;
+        }
+
+        html,
+        body {
+          height: auto;
+          overflow-y: auto;
+        }
+
+        .info p {
+          margin: 0.5rem 0;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .info p span {
+          margin-left: 0.5rem;
+          flex: 1;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
       }
     </style>
   </head>
   <body>
     <div class="card">
-      <!-- 👤 Profile image -->
-      <div
-        class="profile-img"
-        style="background-image: url('Bio Link.png')"
-      ></div>
+      <!-- Top Section -->
+      <div>
+        <div
+          class="profile-img"
+          style="background-image: url('Bio Link.png')"
+        ></div>
+        <div class="name">Jessica M. Breitenstein</div>
+        <div class="title">Planner & Founder</div>
+      </div>
 
-      <div class="name">Jessica M. Breitenstein</div>
-      <div class="title">Planner & Founder</div>
-
+      <!-- Middle Section -->
       <div class="info">
         <p>📞 <span>+6017 292 2896</span></p>
         <p>✉️ <span>hello.minmoments@gmail.com</span></p>
         <p>🔗 <span>Website Coming Soon</span></p>
       </div>
 
+      <!-- Bottom Section -->
       <a href="Contact.vcf" download>
         <button class="save-button">💾 Save Contact Data</button>
       </a>
