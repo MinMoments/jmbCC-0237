@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About Beatrice Lai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(-45deg, #f0f0f5, #e4e4e8, #e6f1ec, #f8f0e8);
+        background-size: 400% 400%;
+        animation: gradientShift 12s ease infinite;
+        color: #222;
+        padding: 1rem;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes slideUpFade {
+        0% {
+          transform: translateY(40px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .container {
+        max-width: 700px;
+        margin: 3rem auto 0 auto;
+        background: #ffffffcc;
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(6px);
+        animation: slideUpFade 0.8s ease-out forwards;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0.25rem;
+      }
+
+      h2 {
+        font-size: 1rem;
+        font-weight: normal;
+        color: #555;
+        margin: 0.75rem 0; /* default spacing for other h2s */
+      }
+
+      .tight-top {
+        margin-top: 0.3rem; /* reduced top spacing */
+        margin-bottom: 1.5rem; /* keep bottom spacing unchanged */
+      }
+
+      .section {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-direction: row;
+      }
+
+      .section:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .section img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 12px;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .section p {
+        flex: 1;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      @media (max-width: 640px) {
+        .section {
+          flex-direction: column !important;
+          align-items: center;
+        }
+
+        .section img {
+          width: 100%;
+          height: auto;
+        }
+
+        .section p {
+          margin-top: 1rem;
+        }
+      }
+
+      .back-button {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 12px 20px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(8px);
+        border-radius: 24px;
+        color: #000;
+        text-decoration: none;
+        font-size: 0.95rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: #b6c5b3;
+        color: #111;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Jessica (Jess) M. Breitenstein</h1>
+      <h2>Co-Founder & Planner of 敏 | Min Moments</h2>
+      <div class="section">
+        <!--img src="jess1.jpg" alt="Jess smiling confidently"-->
+
+        <p>
+          Jessica is the creative soul behind 敏 | Min Moments. With a
+          background in event and hospitality management and a deep love for all
+          things hands-on and DIY, Jess brings an artistic eye and a joyful
+          spirit to every celebration. She co-founded the company with Bea to
+          help couples feel truly seen, supported, and celebrated, not just in
+          logistics, but in the little details that bring their story to life.
+        </p>
+      </div>
+
+      <div class="section">
+        <!--img src="jess2.jpg" alt="Jess smiling confidently"-->
+        <p>
+          Jess has always been drawn to the magic of the “big day”, the dress-up
+          themes, the once-in-a-lifetime feeling, the gathering of loved ones in
+          a moment that feels straight out of a fairytale. For her, every
+          wedding is a new canvas. She lights up at the chance to get creative,
+          whether she’s designing custom decor, crafting with her own hands, or
+          curating mood boards that reflect the heart of a couple’s story.
+        </p>
+      </div>
+      <div class="section">
+        <!--img src="jess3.jpg" alt="Jess smiling confidently"-->
+
+        <p>
+          Her bubbly energy and genuine excitement make her more than a planner,
+          she’s a partner in joy. She treats each client’s event with the same
+          care and thrill as if it were her own, celebrating every milestone and
+          decision right alongside them.
+        </p>
+      </div>
+      <div class="section">
+        <p>
+          With Jess, creativity meets care, and every detail becomes part of a
+          bigger, more beautiful memory.
+        </p>
+      </div>
+
+      <a href="index.html" class="back-button">← Back to Contact Card</a>
+    </div>
+  </body>
+</html>
